@@ -1,0 +1,116 @@
+---
+---
+<section class="pricing feat--white section" id="pricing">
+  <div class="wrap">
+    <h2 class="h-section center on-sky" data-reveal>Pick a plan</h2>
+
+    <div class="pricing__toggle" data-reveal role="tablist">
+      <button class="pricing__opt is-active" data-plan="yearly">Yearly <span class="pricing__save">save 20%</span></button>
+      <button class="pricing__opt" data-plan="monthly">Monthly</button>
+    </div>
+
+    <div class="pricing__grid">
+      <div class="plan" data-reveal>
+        <div class="plan__name">Professional</div>
+        <div class="plan__price">
+          <span class="plan__amount" data-price data-yearly="$20" data-monthly="$24">$20</span>
+          <span class="plan__per">/month</span>
+        </div>
+        <div class="plan__billed" data-billed data-yearly="Billed annually as $240" data-monthly="Billed monthly">Billed annually as $240</div>
+        <ul class="plan__list">
+          <li>Includes 2 email accounts</li>
+          <li>AI inbox organization</li>
+          <li>Pre-drafted responses</li>
+          <li>Daily brief summaries</li>
+          <li>Technical support</li>
+        </ul>
+        <a href="#login" class="btn btn--outline plan__cta">Start free trial</a>
+      </div>
+
+      <div class="plan plan--featured" data-reveal style="--reveal-delay:.1s">
+        <div class="plan__flag">Most popular</div>
+        <div class="plan__name">Unlimited</div>
+        <div class="plan__price">
+          <span class="plan__amount" data-price data-yearly="$39" data-monthly="$47">$39</span>
+          <span class="plan__per">/month</span>
+        </div>
+        <div class="plan__billed" data-billed data-yearly="Billed annually as $470" data-monthly="Billed monthly">Billed annually as $470</div>
+        <ul class="plan__list">
+          <li>Everything in Professional</li>
+          <li>Includes unlimited email accounts</li>
+          <li>Priority processing</li>
+          <li>Early access to new features</li>
+        </ul>
+        <a href="#login" class="btn btn--filled plan__cta">Start free trial <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing { padding: clamp(64px, 10vw, 128px) 0; }
+  .pricing h2 { margin-bottom: 28px; }
+  .pricing__toggle {
+    display: inline-flex;
+    background: var(--color-mist-gray);
+    border-radius: 9999px;
+    padding: 4px;
+    margin: 0 auto 44px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+  }
+  .pricing__opt {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 14px; font-weight: 500; color: var(--color-graphite);
+    padding: 9px 20px; border-radius: 9999px; transition: all .25s;
+  }
+  .pricing__opt.is-active { background: #fff; color: var(--color-ink); box-shadow: 0 1px 3px rgba(0,0,0,.14); }
+  .pricing__save {
+    font-size: 11px; font-weight: 600; color: var(--color-cerulean-sky);
+    background: #eaf3fc; padding: 2px 8px; border-radius: 9999px;
+  }
+
+  .pricing__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 820px;
+    margin-inline: auto;
+  }
+  .plan {
+    position: relative;
+    border: 1px solid var(--color-fog);
+    border-radius: var(--radius-modals);
+    padding: 32px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .plan--featured {
+    border-color: var(--color-atmosphere-blue);
+    box-shadow: var(--shadow-elev);
+    background: linear-gradient(180deg,#f7fbff,#ffffff);
+  }
+  .plan__flag {
+    position: absolute; top: -12px; right: 24px;
+    background: var(--color-midnight-navy); color: #fff;
+    font-size: 11px; font-weight: 600; letter-spacing: .04em;
+    padding: 5px 12px; border-radius: 9999px;
+  }
+  .plan__name { font-size: 15px; font-weight: 600; color: var(--color-graphite); }
+  .plan__price { display: flex; align-items: baseline; gap: 4px; margin-top: 14px; }
+  .plan__amount { font-family: var(--font-signifier); font-weight: 400; font-size: 52px; color: var(--color-ink); line-height: 1; }
+  .plan__per { font-size: 16px; color: var(--color-graphite); }
+  .plan__billed { font-size: 13px; color: var(--color-stone); margin-top: 6px; }
+  .plan__list { display: flex; flex-direction: column; gap: 12px; margin: 24px 0 28px; }
+  .plan__list li {
+    font-size: 14px; color: var(--color-ink); padding-left: 26px; position: relative; line-height: 1.4;
+  }
+  .plan__list li::before {
+    content: "✓"; position: absolute; left: 0; top: 0;
+    color: var(--color-cerulean-sky); font-weight: 700; font-size: 14px;
+  }
+  .plan__cta { justify-content: center; margin-top: auto; width: 100%; }
+  @media (max-width: 720px) { .pricing__grid { grid-template-columns: 1fr; } }
+</style>

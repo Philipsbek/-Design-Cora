@@ -1,0 +1,20 @@
+---
+import '../styles/global.css';
+const { title = 'Give Cora your inbox. Take back your life.', description = 'Cora is the $150,000 chief of staff that only costs $20 per month.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="theme-color" content="#117bc8" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

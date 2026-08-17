@@ -1,0 +1,54 @@
+---
+const cards = [
+  { icon: "⛨", title: "We never train on your data", body: "We share your emails with LLMs, but your data is never used to train models." },
+  { icon: "◎", title: "No one can see your emails", body: "We have no backdoor access or ability to view your emails. Period." },
+  { icon: "✎", title: "Cora can't send or delete emails", body: "Cora doesn't have the ability or permissions to send or delete emails." },
+  { icon: "✔", title: "Top security standards", body: "Cora is Google Verified and CASA Tier 2 compliant." },
+];
+---
+<section class="sec feat--sky section">
+  <div class="wrap">
+    <h2 class="h-section center on-sky" data-reveal>Security and privacy are built in</h2>
+    <div class="sec__grid">
+      {cards.map((c, i) => (
+        <div class="sec__card" data-reveal style={`--reveal-delay:${i * 0.08}s`}>
+          <span class="sec__icon">{c.icon}</span>
+          <h3>{c.title}</h3>
+          <p>{c.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .sec { padding: clamp(60px, 10vw, 120px) 0; }
+  .sec h2 { margin-bottom: clamp(36px, 5vw, 56px); }
+  .sec__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .sec__card {
+    background: #fff;
+    border-radius: var(--radius-cards);
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: var(--shadow-card);
+  }
+  .sec__icon {
+    font-size: 20px;
+    color: var(--color-cerulean-sky);
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    background: #f0f6fd;
+    border-radius: 10px;
+    margin-bottom: 6px;
+  }
+  .sec__card h3 { font-size: 16px; font-weight: 600; color: var(--color-ink); line-height: 1.3; }
+  .sec__card p { font-size: 14px; line-height: 1.5; color: var(--color-graphite); }
+  @media (max-width: 900px) { .sec__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .sec__grid { grid-template-columns: 1fr; } }
+</style>

@@ -1,0 +1,73 @@
+---
+const faqs = [
+  { q: "Wait, does this actually write and send emails for me?", a: "No — Cora will never send emails for you. It drafts responses in your voice that appear in your drafts folder, but you always have full control. You review, edit if needed, and decide when to send. Think of it as a thoughtful assistant who prepares options for you, not someone who speaks on your behalf." },
+  { q: "How does Cora know what's 'important' to me?", a: "When you first sign up, Cora analyzes a selection of your email history to understand your patterns — who you respond to quickly, what types of emails you typically act on, and your communication style. It learns that emails from your boss or key clients are probably important, so you always see them. You can chat with Cora to adjust its understanding over time." },
+  { q: "What if Cora briefs an important email?", a: "You can always see the emails Cora sets aside by opening the 'Next Brief' label it creates, so nothing ever disappears. If it briefs something important, just tell Cora — over chat or email — not to do that again, and it learns." },
+  { q: "Is this Gmail-only?", a: "Yes, currently Cora works with Gmail and Google Workspace. Outlook and other email providers are not supported yet, but they're on the roadmap." },
+  { q: "What exactly is a 'Brief'?", a: "A Brief is a beautiful, scannable summary delivered twice daily — morning and afternoon — containing all your non-urgent email: newsletters, notifications, calendar invites, and FYIs. It's designed to be read in 30 seconds. It arrives as an email, and you can also read it on the web." },
+  { q: "How long is the free trial?", a: "You can use Cora free for 7 days — no commitment, and you can cancel anytime before it ends." },
+  { q: "If Cora can read all my emails to learn my voice… is that safe?", a: "Cora uses AI models from leading providers to process your emails, but we have zero backdoor access to view them. We're Google Verified and compliant with GDPR, ISO 27001, and CASA Tier 2 standards." },
+  { q: "What happens to my existing unread emails?", a: "Cora only handles email that arrives after you turn it on, so your existing backlog stays exactly where it is. We're working on an inbox-cleaning feature — stay tuned." },
+  { q: "Can I turn it off if I don't like it?", a: "Absolutely. You can turn Cora off whenever you want, and you can also disable specific features — like drafts — individually in your settings." },
+  { q: "Do I use Cora instead of Gmail, or alongside it?", a: "Cora connects to your Gmail and works right alongside it — no app switching. You keep using Gmail exactly as you do now, just with far fewer emails demanding your attention." },
+];
+---
+<section class="faq feat--white section">
+  <div class="wrap faq__inner">
+    <h2 class="h-section center on-sky" data-reveal>Frequently asked questions</h2>
+    <div class="faq__list" data-reveal>
+      {faqs.map((f) => (
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>{f.q}</span>
+            <span class="faq__icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq__a"><p>{f.a}</p></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq { padding: clamp(64px, 10vw, 120px) 0; }
+  .faq__inner { max-width: 780px; }
+  .faq h2 { margin-bottom: clamp(32px, 5vw, 48px); }
+  .faq__list { border-top: 1px solid rgba(255,255,255,.28); }
+  .faq__item { border-bottom: 1px solid rgba(255,255,255,.28); }
+  .faq__q {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
+    padding: 22px 4px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+  }
+  .faq__icon {
+    flex: 0 0 auto;
+    font-size: 22px;
+    font-weight: 300;
+    color: #fff;
+    transition: transform .3s ease;
+    line-height: 1;
+  }
+  .faq__q[aria-expanded="true"] .faq__icon { transform: rotate(45deg); }
+  .faq__a {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .35s cubic-bezier(.16,1,.3,1);
+  }
+  .faq__a > p {
+    overflow: hidden;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.82);
+    padding-right: 40px;
+  }
+  .faq__q[aria-expanded="true"] + .faq__a { grid-template-rows: 1fr; }
+  .faq__q[aria-expanded="true"] + .faq__a > p { padding-bottom: 22px; }
+</style>

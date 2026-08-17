@@ -1,0 +1,120 @@
+---
+---
+<section class="feat feat--white section">
+  <div class="wrap feat__grid feat__grid--rev">
+    <div class="feat__mock" data-reveal>
+      <div class="mailcard">
+        <div class="mailcard__head">
+          <div class="mailcard__from">
+            <span class="mailcard__avatar">LM</span>
+            <div>
+              <strong>Dr. Lila Mensah</strong>
+              <span>lila.mensah@medinsight.ai</span>
+            </div>
+          </div>
+          <span class="mailcard__label">Needs reply</span>
+        </div>
+        <div class="mailcard__subject">Data-sharing agreement signature</div>
+        <p class="mailcard__body">
+          Legal finalized the DSA in DocuSign. Could you review the privacy clauses and sign
+          so we stay on track for the 5/20 data pull? Let me know if anything looks off.
+        </p>
+      </div>
+
+      <div class="draft">
+        <div class="draft__tag">
+          <span class="draft__spark">✦</span> Cora Draft
+        </div>
+        <p class="draft__body">
+          Hi Lila — just reviewed the DSA. The privacy clauses look good; I added one note on
+          clause 6 about retention windows. Signing now so we're clear for the 5/20 pull.
+          Thanks for keeping this moving.
+        </p>
+        <div class="draft__foot">
+          <button class="btn btn--filled draft__send">Send <span class="arrow" aria-hidden="true">→</span></button>
+          <button class="draft__edit">Edit draft</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat__text" data-reveal style="--reveal-delay:.14s">
+      <h2 class="h-section on-sky">Cora drafts responses in your voice</h2>
+      <p class="lead on-sky-muted">
+        Whenever Cora has enough context from your email history to draft a great response for you,
+        it does — ready in your drafts folder, in your words, waiting for one click.
+      </p>
+      <a href="#pricing" class="btn btn--filled feat__btn">
+        Get Started <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .feat--white {
+    padding: clamp(64px, 10vw, 128px) 0;
+  }
+  .feat__grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+  }
+  .feat__text { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+  .feat__btn { margin-top: 6px; }
+
+  .mailcard {
+    background: #fff;
+    border: 1px solid var(--color-fog);
+    border-radius: 14px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow-card);
+  }
+  .mailcard__head { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .mailcard__from { display: flex; align-items: center; gap: 12px; }
+  .mailcard__avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg,#5aa7dd,#0d5c96);
+    color: #fff; font-size: 14px; font-weight: 600;
+    display: grid; place-items: center; flex: 0 0 auto;
+  }
+  .mailcard__from strong { display: block; font-size: 14px; font-weight: 600; color: var(--color-ink); }
+  .mailcard__from span { font-size: 13px; color: var(--color-stone); }
+  .mailcard__label {
+    font-size: 12px; font-weight: 600; color: var(--color-berry-red);
+    background: rgba(207,55,45,.08); padding: 5px 10px; border-radius: 9999px; flex: 0 0 auto;
+  }
+  .mailcard__subject { font-size: 16px; font-weight: 600; color: var(--color-ink); margin-top: 16px; }
+  .mailcard__body { font-size: 14px; line-height: 1.55; color: var(--color-graphite); margin-top: 8px; }
+
+  .draft {
+    position: relative;
+    margin-top: -14px;
+    margin-left: 34px;
+    margin-right: -6px;
+    background: #f5f8fe;
+    border: 1px solid var(--color-atmosphere-blue);
+    border-radius: 14px;
+    padding: 18px 20px;
+    box-shadow: var(--shadow-elev);
+  }
+  .draft__tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600; letter-spacing: .04em;
+    color: var(--color-cerulean-sky);
+    text-transform: uppercase;
+  }
+  .draft__spark { color: var(--color-cerulean-sky); }
+  .draft__body { font-size: 14px; line-height: 1.6; color: var(--color-ink); margin-top: 10px; }
+  .draft__foot { display: flex; align-items: center; gap: 16px; margin-top: 16px; }
+  .draft__send { padding: 9px 18px; font-size: 14px; }
+  .draft__edit { font-size: 14px; font-weight: 500; color: var(--color-graphite); }
+  .draft__edit:hover { color: var(--color-ink); }
+
+  @media (max-width: 860px) {
+    .feat__grid--rev { grid-template-columns: 1fr; }
+    .feat__grid--rev .feat__mock { order: 2; }
+    .feat__text { align-items: center; text-align: center; }
+    .draft { margin-left: 16px; margin-right: 6px; }
+  }
+</style>

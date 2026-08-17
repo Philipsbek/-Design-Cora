@@ -1,0 +1,107 @@
+---
+const morning = [
+  { cat: "Newsletters", items: ["The Signal — why small AI teams are winning", "Lenny's roundup: 5 growth experiments"] },
+  { cat: "Notifications", items: ["3 new comments on the Q3 planning doc", "Figma: Aria shared 'Onboarding v4'"] },
+  { cat: "FYI", items: ["Invoice #4821 was paid", "Your domain renews in 14 days"] },
+];
+const afternoon = [
+  { cat: "Newsletters", items: ["Stratechery — aggregation, revisited", "Every: the case for the personal API"] },
+  { cat: "Calendar", items: ["Tomorrow: 3 meetings, first at 9:30", "Design review moved to Thursday"] },
+  { cat: "Receipts", items: ["Notion annual plan renewed", "Uber — trip to the airport"] },
+];
+---
+<section class="brief feat--sky section">
+  <div class="wrap brief__grid">
+    <div class="feat__text" data-reveal>
+      <h2 class="h-section on-sky">The rest gets Briefed</h2>
+      <p class="lead on-sky-muted">
+        Twice a day, Cora sends you a beautiful Brief that summarizes everything you need to read
+        but don't need to respond to. Read your inbox in 30 seconds instead of 3 hours.
+      </p>
+      <a href="#pricing" class="btn btn--white feat__btn">
+        Get Started <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="brief__mock" data-reveal style="--reveal-delay:.14s">
+      <div class="briefcard">
+        <div class="briefcard__head">
+          <span class="briefcard__date serif">Today's Brief</span>
+          <div class="briefcard__tabs" role="tablist">
+            <button class="briefcard__tab is-active" data-brief-tab="morning">Morning</button>
+            <button class="briefcard__tab" data-brief-tab="afternoon">Afternoon</button>
+          </div>
+        </div>
+        <div class="briefcard__meta">All accounts · 27 emails handled</div>
+
+        <div class="briefcard__panel is-active" data-brief-panel="morning">
+          {morning.map((g) => (
+            <div class="bgroup">
+              <div class="bgroup__cat">{g.cat}</div>
+              {g.items.map((it) => <div class="bgroup__item">{it}</div>)}
+            </div>
+          ))}
+        </div>
+        <div class="briefcard__panel" data-brief-panel="afternoon">
+          {afternoon.map((g) => (
+            <div class="bgroup">
+              <div class="bgroup__cat">{g.cat}</div>
+              {g.items.map((it) => <div class="bgroup__item">{it}</div>)}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .brief { padding: clamp(60px, 10vw, 120px) 0; }
+  .brief__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+  }
+  .brief__grid .feat__text { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+
+  .briefcard {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-elev);
+  }
+  .briefcard__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .briefcard__date { font-size: 26px; font-weight: 400; color: var(--color-ink); }
+  .briefcard__tabs {
+    display: inline-flex;
+    background: var(--color-mist-gray);
+    border-radius: 9999px;
+    padding: 3px;
+  }
+  .briefcard__tab {
+    font-size: 13px; font-weight: 500; color: var(--color-graphite);
+    padding: 7px 16px; border-radius: 9999px; transition: all .25s;
+  }
+  .briefcard__tab.is-active { background: #fff; color: var(--color-ink); box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+  .briefcard__meta { font-size: 13px; color: var(--color-stone); margin-top: 6px; margin-bottom: 18px; }
+
+  .briefcard__panel { display: none; flex-direction: column; gap: 20px; }
+  .briefcard__panel.is-active { display: flex; animation: fadeUp .5s cubic-bezier(.16,1,.3,1); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+  .bgroup__cat {
+    font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--color-cerulean-sky); margin-bottom: 8px;
+  }
+  .bgroup__item {
+    font-size: 14px; color: var(--color-ink); padding: 9px 0;
+    border-bottom: 1px solid var(--color-fog); line-height: 1.4;
+  }
+  .bgroup__item:last-child { border-bottom: none; }
+
+  @media (max-width: 860px) {
+    .brief__grid { grid-template-columns: 1fr; }
+    .brief__grid .feat__text { align-items: center; text-align: center; }
+  }
+</style>

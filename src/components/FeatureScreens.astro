@@ -1,0 +1,111 @@
+---
+const inbox = [
+  { dot: "#cf372d", subject: "Contract renewal — needs your sign-off", from: "Dr. Lila Mensah", preview: "Legal finalized the terms. Could you review clauses 4–7 before Friday?", time: "9:04 AM" },
+  { dot: "#117bc8", subject: "Board deck for Thursday", from: "Samira Okonkwo", preview: "Dropped v3 in the shared drive — flagged two slides for your input.", time: "8:41 AM" },
+  { dot: "#117bc8", subject: "Re: partnership call tomorrow", from: "Naveen Rao", preview: "Loved the proposal. 11am ET works — want me to send an invite?", time: "8:12 AM" },
+  { dot: "#a1a1a1", subject: "Your flight to SFO is confirmed", from: "Travel", preview: "Departure 6:20 AM · Gate B14 · Boarding pass attached", time: "7:55 AM" },
+];
+---
+<section class="feat feat--sky section">
+  <div class="wrap feat__grid">
+    <div class="feat__text" data-reveal>
+      <h2 class="h-section on-sky">Cora screens your email</h2>
+      <p class="lead on-sky-muted">
+        Cora knows what's important to you and the types of emails you need to respond to.
+        It keeps those messages in your inbox for you to see ASAP.
+      </p>
+      <a href="#pricing" class="btn btn--white feat__btn">
+        Start your free trial <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="feat__mock" data-reveal style="--reveal-delay:.14s">
+      <div class="app">
+        <div class="app__bar">
+          <span class="app__dots"><i></i><i></i><i></i></span>
+          <span class="app__title serif">Inbox</span>
+          <span class="app__badge">4 important</span>
+        </div>
+        <div class="app__body">
+          {inbox.map((m) => (
+            <div class="row">
+              <span class="row__dot" style={`background:${m.dot}`}></span>
+              <div class="row__main">
+                <div class="row__top">
+                  <strong>{m.from}</strong>
+                  <span class="row__time">{m.time}</span>
+                </div>
+                <div class="row__subject">{m.subject}</div>
+                <div class="row__preview">{m.preview}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .feat { padding: clamp(60px, 10vw, 120px) 0; }
+  .feat__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: clamp(32px, 5vw, 72px);
+    align-items: center;
+  }
+  .feat__text { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+  .feat__btn { margin-top: 6px; }
+
+  .app {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-elev);
+    border: 1px solid rgba(255,255,255,.5);
+  }
+  .app__bar {
+    background: var(--color-cerulean-sky);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+  }
+  .app__dots { display: flex; gap: 6px; }
+  .app__dots i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.55); }
+  .app__title { font-size: 20px; font-weight: 400; margin-left: 4px; }
+  .app__badge {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 600;
+    background: rgba(255,255,255,.2);
+    padding: 5px 10px;
+    border-radius: 9999px;
+  }
+  .app__body { padding: 8px; }
+  .row {
+    display: flex;
+    gap: 12px;
+    padding: 14px 12px;
+    border-radius: 8px;
+    border-bottom: 1px solid var(--color-fog);
+    transition: background .2s;
+  }
+  .row:last-child { border-bottom: none; }
+  .row:hover { background: #f5f8fe; }
+  .row__dot { width: 9px; height: 9px; border-radius: 50%; margin-top: 6px; flex: 0 0 auto; }
+  .row__main { min-width: 0; flex: 1; }
+  .row__top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .row__top strong { font-size: 14px; font-weight: 600; color: var(--color-ink); }
+  .row__time { font-size: 12px; color: var(--color-stone); flex: 0 0 auto; }
+  .row__subject { font-size: 15px; font-weight: 500; color: var(--color-ink); margin-top: 2px; }
+  .row__preview {
+    font-size: 13px; color: var(--color-graphite); margin-top: 3px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  @media (max-width: 860px) {
+    .feat__grid { grid-template-columns: 1fr; }
+    .feat__text { align-items: center; text-align: center; }
+  }
+</style>

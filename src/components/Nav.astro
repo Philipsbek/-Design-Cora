@@ -1,0 +1,62 @@
+---
+---
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="Cora home">
+      <img src="/images/logo.png" alt="Cora" width="34" height="25" />
+      <span>Cora</span>
+    </a>
+    <nav class="nav__right">
+      <a href="#login" class="nav__link">Log in</a>
+      <a href="#pricing" class="btn btn--sky nav__cta">Start free trial</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    transition: background-color .4s ease, box-shadow .4s ease, backdrop-filter .4s ease;
+  }
+  .nav.is-scrolled {
+    background: rgba(17, 123, 200, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 1px 0 rgba(255,255,255,.12);
+  }
+  .nav__inner {
+    max-width: var(--page-max-width);
+    margin-inline: auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav__logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #fff;
+    font-family: var(--font-signifier);
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+  }
+  .nav__logo img { filter: brightness(0) invert(1); height: 26px; width: auto; }
+  .nav__right { display: flex; align-items: center; gap: 22px; }
+  .nav__link {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    opacity: .92;
+    transition: opacity .2s;
+  }
+  .nav__link:hover { opacity: 1; }
+  .nav__cta { font-size: 15px; padding: 10px 20px; }
+  @media (max-width: 640px) {
+    .nav__link { display: none; }
+    .nav__inner { padding: 14px 18px; }
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FeatureScreens from '../components/FeatureScreens.astro';
+import FeatureDrafts from '../components/FeatureDrafts.astro';
+import FeatureBrief from '../components/FeatureBrief.astro';
+import FeatureLearns from '../components/FeatureLearns.astro';
+import Security from '../components/Security.astro';
+import Pricing from '../components/Pricing.astro';
+import Bundle from '../components/Bundle.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+---
+<Layout>
+  <!-- Full-bleed romantic sky painting: the page canvas, behind everything -->
+  <div class="sky-canvas" aria-hidden="true">
+    <div class="sky-canvas__inner">
+      <img src="/images/background.webp" alt="" fetchpriority="high" />
+    </div>
+  </div>
+
+  <!-- Drifting cloud band floating over the upper sky -->
+  <div class="clouds" aria-hidden="true">
+    <img class="clouds__img clouds__img--a" src="/images/cloud.webp" alt="" />
+    <img class="clouds__img clouds__img--b" src="/images/cloud.webp" alt="" />
+  </div>
+
+  <Nav />
+
+  <main class="page">
+    <Hero />
+    <Testimonials />
+    <FeatureScreens />
+    <FeatureDrafts />
+    <FeatureBrief />
+    <FeatureLearns />
+    <Security />
+    <Pricing />
+    <Bundle />
+    <FAQ />
+    <FinalCTA />
+  </main>
+</Layout>
+
+<script>
+  import '../scripts/main.js';
+</script>
+
+<style>
+  .page { position: relative; z-index: 1; }
+  /* cloud band spans the hero + into the testimonials, like the live site */
+  .clouds {
+    top: 62vh;
+    height: 620px;
+  }
+  @media (max-width: 860px) {
+    .clouds { top: 70vh; height: 420px; }
+  }
+</style>

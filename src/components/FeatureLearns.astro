@@ -1,0 +1,56 @@
+---
+---
+<section class="learns feat--white section">
+  <div class="wrap">
+    <h2 class="h-section center on-sky" data-reveal>Cora learns you inside and out</h2>
+    <div class="learns__grid">
+      <div class="learns__card" data-reveal>
+        <span class="learns__icon">◑</span>
+        <h3>Cora gets to know you, automatically</h3>
+        <p>Cora reads your email patterns to discover who you are — your work, your style, and your priorities — without a single form to fill out.</p>
+      </div>
+      <div class="learns__card" data-reveal style="--reveal-delay:.12s">
+        <span class="learns__icon">✦</span>
+        <h3>Shape Cora through conversation</h3>
+        <p>Talk to Cora like your chief of staff over chat or email. Explain how you want emails filed and situations handled. It remembers everything that matters.</p>
+      </div>
+    </div>
+    <div class="center" data-reveal style="--reveal-delay:.2s">
+      <a href="#pricing" class="btn btn--filled">Get Started <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .learns { padding: clamp(64px, 10vw, 128px) 0; }
+  .learns h2 { margin-bottom: clamp(36px, 5vw, 56px); }
+  .learns__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 44px;
+  }
+  .learns__card {
+    background: #fff;
+    border-radius: var(--radius-cards);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: var(--shadow-elev);
+  }
+  .learns__icon {
+    font-size: 22px;
+    color: var(--color-cerulean-sky);
+    width: 46px; height: 46px;
+    display: grid; place-items: center;
+    background: #f0f6fd;
+    border-radius: 12px;
+    margin-bottom: 6px;
+  }
+  .learns__card h3 { font-size: 20px; font-weight: 600; color: var(--color-ink); }
+  .learns__card p { font-size: 15px; line-height: 1.55; color: var(--color-graphite); }
+  @media (max-width: 720px) {
+    .learns__grid { grid-template-columns: 1fr; }
+  }
+</style>

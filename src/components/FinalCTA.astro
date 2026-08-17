@@ -1,0 +1,59 @@
+---
+---
+<section class="final feat--sky section">
+  <div class="wrap final__inner">
+    <h2 class="h-display on-sky" data-reveal>Free yourself from email</h2>
+    <p class="lead on-sky-muted" data-reveal style="--reveal-delay:.1s">
+      Let Cora handle your emails, so you can regain time to focus on what matters.
+    </p>
+    <a href="#pricing" class="btn btn--white final__btn" data-reveal style="--reveal-delay:.18s">
+      Start your free trial <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
+<footer class="footer feat--sky">
+  <div class="wrap footer__inner">
+    <a href="/" class="footer__brand">
+      <img src="/images/logo.png" alt="Cora" width="30" height="22" />
+      <span class="serif">Cora</span>
+    </a>
+    <nav class="footer__links">
+      <a href="#privacy">Privacy</a>
+      <a href="#terms">Terms</a>
+      <a href="#login">Log in</a>
+    </nav>
+    <p class="footer__fine">Made by Every · © 2026 Cora</p>
+  </div>
+</footer>
+
+<style>
+  .final { padding: clamp(80px, 12vw, 160px) 0 clamp(60px, 8vw, 100px); }
+  .final__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+  .final__inner h2 { color: #fff; }
+  .final__btn { margin-top: 8px; }
+
+  .footer { padding: 40px 0 60px; }
+  .footer__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,.22);
+    padding-top: 30px;
+  }
+  .footer__brand { display: flex; align-items: center; gap: 8px; color: #fff; font-size: 20px; }
+  .footer__brand img { filter: brightness(0) invert(1); height: 22px; width: auto; }
+  .footer__links { display: flex; gap: 26px; }
+  .footer__links a { color: rgba(255,255,255,.85); font-size: 14px; font-weight: 500; transition: color .2s; }
+  .footer__links a:hover { color: #fff; }
+  .footer__fine { color: rgba(255,255,255,.6); font-size: 13px; }
+  @media (max-width: 640px) { .footer__inner { justify-content: center; text-align: center; } }
+</style>

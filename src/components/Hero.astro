@@ -1,0 +1,96 @@
+---
+---
+<section class="hero">
+  <div class="hero__copy wrap">
+    <h1 class="hero__title serif" data-reveal>
+      Give Cora your inbox.<br />Take back your life.
+    </h1>
+    <p class="hero__sub" data-reveal style="--reveal-delay:.12s">
+      Cora is the $150,000 chief of staff that only costs $20 per month
+    </p>
+    <div class="hero__cta" data-reveal style="--reveal-delay:.22s">
+      <a href="#pricing" class="btn btn--filled">
+        Get Started
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero__preview wrap" data-reveal style="--reveal-delay:.3s">
+    <div class="laptop" data-tilt>
+      <div class="laptop__screen">
+        <video
+          src="/videos/demo.mp4"
+          poster="/images/preview.webp"
+          autoplay muted loop playsinline
+          preload="metadata"
+        ></video>
+      </div>
+      <div class="laptop__base"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    z-index: 1;
+    padding-top: clamp(140px, 20vh, 220px);
+  }
+  .hero__copy { text-align: center; }
+  .hero__title {
+    color: #fff;
+    font-size: clamp(42px, 7vw, 66px);
+    line-height: 1.05;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 30px rgba(9,66,108,.25);
+  }
+  .hero__sub {
+    margin-top: 22px;
+    color: rgba(255,255,255,.92);
+    font-size: clamp(16px, 1.5vw, 19px);
+    font-weight: 400;
+  }
+  .hero__cta { margin-top: 30px; }
+
+  .hero__preview {
+    margin-top: clamp(48px, 7vw, 90px);
+    perspective: 1600px;
+  }
+  .laptop {
+    position: relative;
+    width: min(72%, 860px);
+    margin-inline: auto;
+    transform: rotateX(6deg);
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  .laptop__screen {
+    border-radius: 14px;
+    padding: 10px;
+    background: linear-gradient(180deg,#1c2733,#0d151d);
+    box-shadow: var(--shadow-frame), 0 40px 80px -30px rgba(9,66,108,.7);
+  }
+  .laptop__screen video,
+  .laptop__screen img {
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+    background: #fff;
+    aspect-ratio: 2044 / 1175;
+    object-fit: cover;
+  }
+  .laptop__base {
+    height: 14px;
+    width: 116%;
+    margin: 0 auto;
+    margin-left: -8%;
+    border-radius: 0 0 16px 16px;
+    background: linear-gradient(180deg,#c9d2da,#8b98a5);
+    box-shadow: 0 20px 30px -18px rgba(9,66,108,.6);
+  }
+  @media (max-width: 900px) {
+    .laptop { width: min(94%, 640px); }
+  }
+</style>
